@@ -6,4 +6,5 @@ export default {
     secondaryDark: "#bc8d00",
     white: '#FFF',
     dark: '#000',
+    backgroundDark: '#0b4368',
 };

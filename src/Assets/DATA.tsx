@@ -12,6 +12,7 @@ export const DATA_COMPANIES = [
         email: "",
         website: "",
         instagram: "",
+        uri: "./companies/sobrinho/sobrinho.jpeg"
     },
     {
         id: 2,
@@ -27,6 +28,7 @@ export const DATA_COMPANIES = [
         email: "",
         website: "",
         instagram: "",
+        uri: "./companies/posto-lucrecia/posto.jpeg"
     },
     {
         id: 3,
@@ -43,5 +45,6 @@ export const DATA_COMPANIES = [
         email: "",
         website: "",
         instagram: "",
+        uri: "./companies/quero-mais/quero-mais-2.jpeg"
     }
 ]

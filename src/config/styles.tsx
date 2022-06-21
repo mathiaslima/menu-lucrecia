@@ -1,3 +1,4 @@
+import colors from './colors';
 import fonts from './fonts';
 
 export default {
@@ -11,4 +12,12 @@ export default {
         shadowRadius: 1.41,
         elevation: 2,
     },
+    page: {
+        flex: 1,
+        backgroundColor: colors.white,
+        paddingVertical: 24,
+    },
+    colorTextLight: {
+        color: colors.white,
+    }
 };
