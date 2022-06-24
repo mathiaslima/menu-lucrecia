@@ -12,7 +12,7 @@ const fontSizes = {
     mediumFontSize: DeviceUiInfo.moderateScale(13),
     mediumLargeFontSize: DeviceUiInfo.moderateScale(15),
     largeFontSize: DeviceUiInfo.moderateScale(16),
-    xLargeFontSize: DeviceUiInfo.moderateScale(25),
+    xLargeFontSize: DeviceUiInfo.moderateScale(22),
 };
 
 export default {

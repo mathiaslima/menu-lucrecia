@@ -1,5 +1,6 @@
 import colors from './colors';
 import fonts from './fonts';
+import layout from './layout';
 
 export default {
     shadowPattern: {
@@ -14,8 +15,10 @@ export default {
     },
     page: {
         flex: 1,
-        backgroundColor: colors.white,
-        paddingVertical: 24,
+        backgroundColor: colors.backgroundLight,
+        padding: layout.padding,
+        paddingTop: 0
+
     },
     colorTextLight: {
         color: colors.white,

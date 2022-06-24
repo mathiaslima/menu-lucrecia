@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import Entypo from '@expo/vector-icons/Entypo';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
@@ -10,8 +9,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './Pages/HomeScreen';
 import SettingsScreen from './Pages/SettingsScreen';
 import PublishScreen from './Pages/PublishScreen';
-import { AntDesign } from '@expo/vector-icons';
 import Constants from './config';
+import { Ionicons, Entypo, AntDesign } from '@expo/vector-icons';
 
 export type RootStackParamList = {
   homeScreen: undefined, // undefined because you aren't passing any params to the home screen
@@ -62,27 +61,37 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style="dark" />
       <NavigationContainer onReady={onLayoutRootView} >
         <Tab.Navigator
           screenOptions={{
             tabBarActiveTintColor: Constants.colors.primaryDark,
+            tabBarStyle: {
+              backgroundColor: Constants.colors.white,
+              borderTopWidth: 0,
+              marginBottom: -16
+            }
           }}
         >
           <Tab.Screen
             name="homeScreen"
             component={HomeScreen}
             options={{
-              tabBarIcon: ({ color, size }) => <AntDesign name="home" size={size} color={color} />,
+              tabBarIcon: ({ color, size, focused }) => <Ionicons name={focused ? "home" : "home-outline"} size={size} color={Constants.colors.dark} />
+              ,
+              tabBarShowLabel: false,
               headerShown: false,
               title: 'Início',
+
             }}
           />
           <Tab.Screen
             name="publishScreen"
             component={PublishScreen}
             options={{
-              tabBarIcon: ({ color, size }) => <AntDesign name="camerao" size={size} color={color} />,
+              tabBarIcon: ({ color, size, focused }) => <Ionicons name={focused ? "camera" : "camera-outline"} size={size} color={Constants.colors.dark} />,
               headerShown: false,
+              tabBarShowLabel: false,
               title: 'Publicar',
             }}
           />
@@ -90,13 +99,14 @@ export default function App() {
             name="settingsScreen"
             component={SettingsScreen}
             options={{
-              tabBarIcon: ({ color }) => <AntDesign name="setting" size={24} color={color} />,
+              tabBarIcon: ({ color, size, focused }) => <Ionicons name={focused ? "settings" : "settings-outline"} size={size} color={Constants.colors.dark} />,
               headerShown: false,
+              tabBarShowLabel: false,
               title: 'Ajustes',
             }}
           />
         </Tab.Navigator>
-        <StatusBar style="dark" />
+
       </NavigationContainer>
     </SafeAreaView>
 
@@ -106,5 +116,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Constants.colors.white,
+    marginVertical: 20,
   },
 });

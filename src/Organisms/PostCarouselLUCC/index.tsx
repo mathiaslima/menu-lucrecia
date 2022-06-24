@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import { DATA_COMPANIES } from '../../Assets/DATA';
 import ButtonIconLUCC from '../../Molecules/ButtonIconLUCC';
 import { AntDesign } from '@expo/vector-icons';
 import Constants from '../../config';
@@ -25,7 +24,7 @@ const PostCarouselLUCC = ({ testID, images, visible, onClose }: PostCarouselLUCC
             <Image
                 key={index}
                 style={styles.image}
-                source={item}
+                source={{ uri: item }}
             />
 
         )

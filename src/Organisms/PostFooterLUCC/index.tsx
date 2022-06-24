@@ -10,21 +10,20 @@ interface IconProps {
 
 }
 
-interface POstFooterLUCCProps {
+interface PostFooterLUCCProps {
     testID?: string;
     icons?: IconProps[];
-    description?: string;
 }
 
 const PostFooterLUCC = ({
     testID,
     icons = [],
-    description
-}: POstFooterLUCCProps) => {
+}: PostFooterLUCCProps) => {
 
     return (
         <View style={styles.container}>
             <View testID={testID} style={styles.row}>
+
                 {icons.map(({ icon, onPress, testID }: IconProps, index: number) =>
                     <ButtonIconLUCC
                         icon={icon}

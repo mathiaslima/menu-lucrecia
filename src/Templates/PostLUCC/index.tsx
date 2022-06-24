@@ -47,38 +47,52 @@ const PostLUCC = ({
 
     const ICONS_DEFAULT = [
         {
-            icon: <FontAwesome name="whatsapp" size={Constants.layout.icon} color={Constants.colors.primaryDark} />,
+            icon: <FontAwesome name="whatsapp" size={Constants.layout.icon} color={Constants.colors.dark} />,
             onPress: () => Linking.openURL(`whatsapp://send?text=${message}&phone=+55${dataCompany.phone}`),
         },
         {
-            icon: <AntDesign name="sharealt" size={Constants.layout.icon} color={Constants.colors.primaryDark} />,
+            icon: <AntDesign name="sharealt" size={Constants.layout.icon} color={Constants.colors.dark} />,
             onPress: () => Linking.openURL(`whatsapp://send?text=${messageSharedNumber}`),
         }
     ]
 
 
     return (
-        <View style={[styles.container, style]}>
-            <PostHeaderLUCC
-                icon={<Ionicons name="restaurant-outline" size={Constants.layout.icon} color={Constants.colors.dark} />}
-                title={title}
-                description={dataCompany.description || ""}
-            />
+        <View style={[styles.container, style, Constants.styles.shadowPattern]}>
+
             <PostBodyLUCC
                 image={dataCompany.image}
                 onPress={onPress}
             />
-            <PostFooterLUCC
-                icons={ICONS_DEFAULT}
-                description={dataCompany.description}
-            />
+            <View style={styles.row}>
+                <PostHeaderLUCC
+                    icon={<Ionicons name="restaurant-outline" size={Constants.layout.icon} color={Constants.colors.dark} />}
+                    title={title}
+                    description={dataCompany.description || ""}
+                />
+                <PostFooterLUCC
+                    icons={ICONS_DEFAULT}
+                />
+
+            </View>
+
+
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        marginVertical: 16,
+        marginVertical: 11,
+        backgroundColor: Constants.colors.white,
+        paddingBottom: 4,
+        borderRadius: 16
+    },
+    row: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
     }
 });
 

@@ -12,7 +12,7 @@ const PostBodyLUCC = ({ onPress, image }: PostBodyLUCCProps) => {
         <TouchableOpacity onPress={onPress} style={styles.container}>
             <Image
                 style={styles.image}
-                source={image}
+                source={{ uri: image }}
             />
         </TouchableOpacity>
     );
@@ -21,11 +21,13 @@ const PostBodyLUCC = ({ onPress, image }: PostBodyLUCCProps) => {
 
 const styles = StyleSheet.create({
     container: {
-        height: 500,
+        height: 380,
     },
     image: {
         width: '100%',
         height: '100%',
+        borderTopLeftRadius: 16,
+        borderTopRightRadius: 16
     }
 });
 

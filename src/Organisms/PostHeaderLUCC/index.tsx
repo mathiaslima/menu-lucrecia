@@ -22,7 +22,7 @@ const PostHeaderLUCC = ({
                 disabled
                 primary
             />
-            <TextLUCC h2 bold >
+            <TextLUCC h2 bold style={styles.text} >
                 {title}{"\n"}
                 <TextLUCC h3>
                     {description}
@@ -35,11 +35,14 @@ const PostHeaderLUCC = ({
 
 const styles = StyleSheet.create({
     row: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         marginHorizontal: 4,
-        marginVertical: 8
+        marginVertical: 8,
+        paddingRight: 16,
     },
+    text: { flexShrink: 1 },
     container: {
         marginHorizontal: 8
     }
