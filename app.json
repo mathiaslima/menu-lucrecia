@@ -14,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "menu.lucrecia"
@@ -26,6 +24,13 @@
         "foregroundImage": "./assets/playstore.png",
         "backgroundColor": "#FFFFFF"
       },
+      "blockedPermissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_CONTACTS",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.CAMERA"
+      ],
       "package": "menu.lucrecia"
     },
     "web": {
