@@ -1,5 +1,5 @@
 
-const isArray = (array: object[]) => Array.isArray(array);
+const isArray = (array: object[]) => Array.isArray(array)
 
 const destructureArrayOfObjectsIntoSigleObject = (array: object[]) =>
     isArray(array) ? array.reduce((acc, el) => ({...acc, ...el}), {}) : array;

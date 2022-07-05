@@ -1,11 +1,11 @@
-import React from "react";
-import { fireEvent, render, waitFor } from "@testing-library/react-native";
-import ButtonLUCC from "../Molecules/ButtonLUCC";
+import React from 'react';
+import { fireEvent, render, waitFor } from '@testing-library/react-native';
+import ButtonLUCC from '../Molecules/ButtonLUCC';
 
-test("Test of click button component", async () => {
+test('Test of click button component', async () => {
   const mockFn = jest.fn();
   const configButton = {
-    title: "Click me",
+    title: 'Click me',
   };
 
   const { getByText } = render(
@@ -17,5 +17,4 @@ test("Test of click button component", async () => {
 
   await waitFor(() => expect(getByText(configButton.title)).toBeTruthy());
   expect(mockFn.mock.calls.length).toBe(1);
-
 });

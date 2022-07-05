@@ -6,7 +6,7 @@ import {
 import Constants from '../../config';
 import { destructureArrayOfObjectsIntoSigleObject } from '../../Functions/utils';
 
-export interface TextLUCCProps {
+export interface TextLccProps {
     onPress?: () => void;
     style?: any;
     children?: any;
@@ -45,7 +45,7 @@ const TextLUCC = ({
     left,
     right,
 
-}: TextLUCCProps) => {
+}: TextLccProps) => {
     function determineFontSize() {
         let fontSize = Constants.fonts.mediumFontSize;
         if (h1) fontSize = Constants.fonts.xLargeFontSize;

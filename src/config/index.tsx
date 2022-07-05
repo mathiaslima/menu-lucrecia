@@ -4,9 +4,9 @@ import fonts from './fonts';
 import styles from './styles';
 
 const Constants = {
-    colors,
-    fonts,
-    layout,
-    styles,
+  colors,
+  fonts,
+  layout,
+  styles,
 };
 export default Constants;
