@@ -7,6 +7,7 @@ import TextLUCC from '../../Atoms/TextLUCC';
 import PostLUCC from '../../Templates/PostLUCC';
 import PostCarouselLUCC from '../../Organisms/PostCarouselLUCC';
 import Constants from '../../config';
+import { shuffle } from '../../Functions/utils';
 LogBox.ignoreLogs(["ViewPropTypes"]);
 
 type ProfileScreenNavigationProp = StackNavigationProp<
@@ -47,7 +48,7 @@ const HomeScreen = ({ navigation }: Props) => {
         await fetch("https://my-json-server.typicode.com/mathiaslima/Api-de-Teste/companies")
             .then(response => response.json())
             .then(data => {
-                setCompanies(data)
+                setCompanies(shuffle(data))
             });
         setLoading(false)
     }
